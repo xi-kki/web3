@@ -78,17 +78,58 @@ h2{scroll-margin-top:16px}
 <main class="wrap">
   <div class="top">
     <a class="logo" href="/">xi-kki/<span>web3</span></a>
-    <nav><a href="/agents/">Agents</a><a href="/builds/">Builds</a><a href="/web3/" aria-current="page" style="color:var(--ink)">Web3</a><a href="/video/">Video</a><a href="/writes/">Writes</a></nav>
+    <nav><a href="/agents/">AI Agents</a><a href="/web3/" aria-current="page" style="color:var(--ink)">Web3</a><a href="/writes/">Writes</a><a href="/builds/">Builds</a><a href="https://wa.me/2349066339975" target="_blank" rel="noopener">Contact</a></nav>
   </div>
 
   <div class="eyebrow">By Xi-kki</div>
   <h1>Web3, made less scary.</h1>
   <p class="lede">On-chain agents, onboarding guides and plain-language writing for people new to crypto. Built on Sui and 0G, written for anyone who has ever been afraid to press "Approve".</p>
   <div class="cta-row"><a class="btn" href="https://gaid3.vercel.app" target="_blank" rel="noopener">Try Gaid3</a><a class="btn ghost" href="https://hackathonia.vercel.app" target="_blank" rel="noopener">Find a Web3 hackathon</a></div>
-  <nav class="chips" aria-label="Jump to"><a href="#build">Builds</a><a href="#read">Writing</a></nav>
+  <nav class="chips" aria-label="Jump to"><a href="#apps">Web3 apps</a><a href="#mix">AI × Web3</a><a href="#read">Writing</a></nav>
 
-  <h2 id="build">On-chain builds</h2>
-  <p class="sub">Trust, payments and onboarding for people and agents on-chain.</p>
+  <h2 id="apps">Web3 apps</h2>
+  <p class="sub">Payments, tickets, portfolios and games on Sui, Solana and ICP.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Live · Multi-chain</span>
+      <h3>Talass</h3>
+      <p>Wallet portfolio dashboard: connect a wallet and see every asset and NFT across chains.</p>
+      <div class="links"><a href="https://talass.vercel.app" target="_blank" rel="noopener">Open →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Live · Sui</span>
+      <h3>Droplet</h3>
+      <p>Send crypto to anyone by username, email or phone. Venmo-style payments on Sui.</p>
+      <div class="links"><a href="https://droplet-topaz.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/droplet" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Live · Sui</span>
+      <h3>Conduit</h3>
+      <p>Event ticketing with NFT tickets and anti-scalping rules.</p>
+      <div class="links"><a href="https://conduit-flame.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/conduit" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Live · Sui</span>
+      <h3>Alithea</h3>
+      <p>Memory training arena on Sui: train your recall in short, game-like rounds.</p>
+      <div class="links"><a href="https://alitia.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/alithea" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Live · ICP</span>
+      <h3>Quizfinity</h3>
+      <p>Gamified learn-to-earn Web3 quizzes on the Internet Computer.</p>
+      <div class="links"><a href="https://quizfinity.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/quizfinity" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card">
+      <span class="tag code">Code · Solana</span>
+      <h3>Ludic</h3>
+      <p>Multi-game arcade on Solana. First game: on-chain tic-tac-toe.</p>
+      <div class="links"><a href="https://github.com/xi-kki/ludic" target="_blank" rel="noopener">View code →</a></div>
+    </div>
+  </div>
+
+  <h2 id="mix">AI × Web3</h2>
+  <p class="sub">AI agents that live on-chain. These also appear on the <a href="/agents/">AI Agents</a> page.</p>
   <div class="grid">
     <div class="card">
       <span class="tag">Live · Sui testnet</span>
@@ -131,6 +172,7 @@ h2{scroll-margin-top:16px}
     <a href="https://wa.me/2349066339975" target="_blank" rel="noopener">Work with me on WhatsApp →</a>
   </footer>
 </main>
+<script src="/agents/notes.js" defer></script>
 <style>
 .reads{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
 .read{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
