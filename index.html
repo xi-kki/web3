@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xi-kki Web3</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23111%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-size=%2716%27 text-anchor=%27middle%27 fill=%27%2322c55e%27 font-family=%27sans-serif%27 font-weight=%27700%27%3Ex%3C/text%3E%3C/svg%3E">
+<meta name="description" content="Web3 work by Xi-kki: on-chain agents on Sui and 0G, onboarding guides, a hackathon finder with chain filters, and plain-language writing on wallets, Bitcoin and Web3.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,650&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f1e7;--surface:#fffdf8;--ink:#1d2a22;--muted:#5d6a61;--line:#e3dccd;--brand:#0f5c3a;--brand-ink:#fff;--soft:#e8f0e9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111814;--surface:#18221c;--ink:#eef3ee;--muted:#a3b0a7;--line:#2a372f;--brand:#4fbf86;--brand-ink:#0b1510;--soft:#1f2e25}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1040px;margin:0 auto;padding:28px 16px 80px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px;margin-bottom:40px}
+.top a{color:var(--muted);text-decoration:none;font-weight:500}
+.top a:hover{color:var(--brand)}
+.top nav{display:flex;gap:16px;flex-wrap:wrap}
+.eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(34px,6vw,54px);line-height:1.05;margin:8px 0 12px;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:58ch;margin:0 0 40px}
+h2{font-family:Fraunces,Georgia,serif;font-size:26px;margin:44px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--brand);transform:translateY(-2px)}
+.card.feature{grid-column:1/-1;background:var(--soft)}
+.card h3{font-family:Fraunces,Georgia,serif;font-size:23px;margin:10px 0 6px}
+.card p{margin:0 0 16px;color:var(--muted);flex:1}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;border-radius:6px;padding:3px 8px;background:var(--soft);color:var(--brand)}
+.feature .tag{background:var(--surface)}
+.tag.code{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.links a{color:var(--brand);text-decoration:none}
+.links a:hover{text-decoration:underline}
+.links a.gh{color:var(--muted)}
+footer{margin-top:56px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--brand);font-weight:600}
+.logo{white-space:nowrap;font-weight:800;letter-spacing:-.02em;text-decoration:none}.logo span{opacity:.6;font-weight:500}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin:-16px 0 22px}
+.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);font-weight:600;text-decoration:none;padding:13px 20px;border-radius:999px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.chips a{font-size:13px;font-weight:600;text-decoration:none;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--surface)}
+.chips a:hover{color:var(--brand);border-color:var(--brand)}
+h2{scroll-margin-top:16px}
+.card{padding:0;overflow:hidden}
+.card>:not(.shot){margin-left:20px;margin-right:20px}
+.card .tag{margin-top:16px}
+.card .links{margin-bottom:20px}
+.shot-link{display:contents}
+.shot{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;background:var(--soft);border-bottom:1px solid var(--line)}
+.shot.ph{display:grid;place-items:center;font:650 34px Fraunces,Georgia,serif;color:var(--brand);background:linear-gradient(135deg,var(--soft),var(--surface))}
+.card.feature{display:grid;grid-template-columns:1.1fr 1fr;align-items:center}
+.card.feature .shot{grid-row:1/6;grid-column:1;height:100%;aspect-ratio:auto;border-bottom:0;border-right:1px solid var(--line)}
+.card.feature>:not(.shot){grid-column:2}
+@media (max-width:640px){
+  .wrap{padding:20px 16px 60px}
+  .grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:2px 16px 10px;scrollbar-width:none}
+  .grid::-webkit-scrollbar{display:none}
+  .card{flex:0 0 80%;scroll-snap-align:start}
+  .card.feature{display:flex;flex-direction:column;align-items:stretch;flex:0 0 80%}
+  .top{flex-wrap:wrap;margin-bottom:28px}
+  .top nav{gap:10px;font-size:13px}
+  .card.feature .shot{height:auto;aspect-ratio:16/10;border-right:0;border-bottom:1px solid var(--line)}
+  .card p{font-size:14px}
+  .card h3{font-size:20px}
+  h2{font-size:22px;margin-top:32px}
+  .sub{font-size:14px;margin-bottom:12px}
+  .top nav{gap:12px}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="top">
+    <a class="logo" href="/">xi-kki/<span>web3</span></a>
+    <nav><a href="/agents/">Agents</a><a href="/builds/">Builds</a><a href="/web3/" aria-current="page" style="color:var(--ink)">Web3</a><a href="/video/">Video</a><a href="/writes/">Writes</a></nav>
+  </div>
+
+  <div class="eyebrow">By Xi-kki</div>
+  <h1>Web3, made less scary.</h1>
+  <p class="lede">On-chain agents, onboarding guides and plain-language writing for people new to crypto. Built on Sui and 0G, written for anyone who has ever been afraid to press "Approve".</p>
+  <div class="cta-row"><a class="btn" href="https://gaid3.vercel.app" target="_blank" rel="noopener">Try Gaid3</a><a class="btn ghost" href="https://hackathonia.vercel.app" target="_blank" rel="noopener">Find a Web3 hackathon</a></div>
+  <nav class="chips" aria-label="Jump to"><a href="#build">Builds</a><a href="#read">Writing</a></nav>
+
+  <h2 id="build">On-chain builds</h2>
+  <p class="sub">Trust, payments and onboarding for people and agents on-chain.</p>
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Live · Sui testnet</span>
+      <h3>Gaid3</h3>
+      <p>A calm guide that walks newcomers through wallets, transactions and safety checks, with private memory on Walrus and zkLogin sign-in.</p>
+      <div class="links"><a href="https://gaid3.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/gaid3" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">Live · 0G</span>
+      <h3>VERIDD</h3>
+      <p>On-chain reputation scores for AI agents. Check an agent's track record before you let it touch your money.</p>
+      <div class="links"><a href="https://veridd.vercel.app" target="_blank" rel="noopener">Open →</a><a class="gh" href="https://github.com/xi-kki/veridd" target="_blank" rel="noopener">Code</a></div>
+    </div>
+    <div class="card">
+      <span class="tag code">Code · Sui</span>
+      <h3>Floe</h3>
+      <p>Trustless escrow for AI agents on Sui, with on-chain verification and disputes.</p>
+      <div class="links"><a href="https://github.com/xi-kki/Floe" target="_blank" rel="noopener">View code →</a></div>
+    </div>
+    <div class="card">
+      <span class="tag">New · Live</span>
+      <h3>Hackathonia</h3>
+      <p>Hackathon finder with a chain filter: Sui, Monad, Bitcoin, Ethereum, Solana and more, refreshed monthly.</p>
+      <div class="links"><a href="https://hackathonia.vercel.app" target="_blank" rel="noopener">Find hackathons →</a><a class="gh" href="https://github.com/xi-kki/hackathonia" target="_blank" rel="noopener">Code</a></div>
+    </div>
+  </div>
+
+  <h2 id="read">Writing</h2>
+  <p class="sub">From The Xi-kki Brief on Substack.</p>
+  <div class="grid reads">
+    <a class="read" href="https://thexikkibrief.substack.com/p/wallet-me-into-web3" target="_blank" rel="noopener"><h3>Wallet me into Web3</h3><span>Read on Substack →</span></a>
+    <a class="read" href="https://thexikkibrief.substack.com/p/the-bitcoin-odyssey-from-cowries" target="_blank" rel="noopener"><h3>The Bitcoin odyssey: from cowries</h3><span>Read on Substack →</span></a>
+    <a class="read" href="https://thexikkibrief.substack.com/p/how-telegram-went-from-web2-to-web3" target="_blank" rel="noopener"><h3>How Telegram went from Web2 to Web3</h3><span>Read on Substack →</span></a>
+    <a class="read" href="https://thexikkibrief.substack.com/p/web1-web2-web3-you-and-me" target="_blank" rel="noopener"><h3>Web1, Web2, Web3: you and me</h3><span>Read on Substack →</span></a>
+  </div>
+
+  <footer>
+    <span>Built by Xi-kki · <a href="https://github.com/xi-kki" target="_blank" rel="noopener">GitHub</a></span>
+    <a href="/writes/">More writing →</a>
+    <a href="https://wa.me/2349066339975" target="_blank" rel="noopener">Work with me on WhatsApp →</a>
+  </footer>
+</main>
+<style>
+.reads{grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.read{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.read h3{margin:0;font-size:16px}.read p{margin:0;color:var(--muted);font-size:14px}.read span{margin-top:auto;color:var(--brand);font-weight:600;font-size:14px}
+.read:hover{border-color:var(--brand)}
+</style>
+<script>
+document.querySelectorAll(".card").forEach(c => {
+  const n = c.querySelector("h3").textContent.trim(), slug = n.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const href = c.querySelector(".links a")?.getAttribute("href");
+  const img = new Image(); img.className = "shot"; img.loading = "lazy"; img.decoding = "async"; img.alt = n + " preview"; img.width = 640; img.height = 400;
+  img.onerror = () => { const d = document.createElement("div"); d.className = "shot ph"; d.textContent = n; img.replaceWith(d); };
+  img.src = "/agents/shots/" + slug + ".webp";
+  const wrap = href ? Object.assign(document.createElement("a"), { href, target: "_blank", rel: "noopener", tabIndex: -1 }) : null;
+  if (wrap) { wrap.append(img); wrap.className = "shot-link"; c.prepend(wrap); } else c.prepend(img);
+});
+</script>
+</body>
+</html>
